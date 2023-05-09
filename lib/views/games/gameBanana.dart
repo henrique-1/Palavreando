@@ -222,8 +222,6 @@ class _GameBananaState extends State<GameBanana> {
                             }
                           }
 
-                          print(dataFix['letter'] == _b &&
-                              dataFix['draggableName'] == "B");
                           return dataFix['letter'] == _b &&
                               dataFix['draggableName'] == "B";
                         },
@@ -288,30 +286,16 @@ class _GameBananaState extends State<GameBanana> {
                         onWillAccept: (data) {
                           dataFix = decodeJson(data);
 
-                          if (dataFix['draggableName'] == "A1") {
-                            if (_isA1Dropped == false) {
-                              if (dataFix['letter'] != _a) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
-                          } else if (dataFix['draggableName'] == "A2") {
-                            if (_isA2Dropped == false) {
-                              if (dataFix['letter'] != _a) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
-                          } else if (dataFix['draggableName'] == "A3") {
-                            if (_isA3Dropped == false) {
-                              if (dataFix['letter'] != _a) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
+                          if ((dataFix['draggableName'] != "A1" ||
+                                  dataFix['draggableName'] != "A2" ||
+                                  dataFix['draggableName'] != "A3") &&
+                              (dataFix['letter'] != _a) &&
+                              (_isA1Dropped == false ||
+                                  _isA2Dropped == false ||
+                                  _isA3Dropped == false)) {
+                            _erros += 1;
+                            print("Erros: $_erros");
+                            verificaPerdeu();
                           }
 
                           return dataFix['letter'] == _a;
@@ -387,22 +371,14 @@ class _GameBananaState extends State<GameBanana> {
                         onWillAccept: (data) {
                           dataFix = decodeJson(data);
 
-                          if (dataFix['draggableName'] == "N1") {
-                            if (!_isN1Dropped) {
-                              if (dataFix['letter'] != _n) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
-                          } else if (dataFix['draggableName'] == "N2") {
-                            if (!_isN2Dropped) {
-                              if (dataFix['letter'] != _n) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
+                          if ((dataFix['draggableName'] != "N1" ||
+                                  dataFix['draggableName'] != "N2") &&
+                              (dataFix['letter'] != _n) &&
+                              (_isN1Dropped == false ||
+                                  _isN2Dropped == false)) {
+                            _erros += 1;
+                            print("Erros: $_erros");
+                            verificaPerdeu();
                           }
 
                           return dataFix['letter'] == _n;
@@ -476,30 +452,16 @@ class _GameBananaState extends State<GameBanana> {
                         onWillAccept: (data) {
                           dataFix = decodeJson(data);
 
-                          if (dataFix['draggableName'] == "A1") {
-                            if (_isA1Dropped == false) {
-                              if (dataFix['letter'] != _a) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
-                          } else if (dataFix['draggableName'] == "A2") {
-                            if (_isA2Dropped == false) {
-                              if (dataFix['letter'] != _a) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
-                          } else if (dataFix['draggableName'] == "A3") {
-                            if (_isA3Dropped == false) {
-                              if (dataFix['letter'] != _a) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
+                          if ((dataFix['draggableName'] != "A1" ||
+                                  dataFix['draggableName'] != "A2" ||
+                                  dataFix['draggableName'] != "A3") &&
+                              (dataFix['letter'] != _a) &&
+                              (_isA1Dropped == false ||
+                                  _isA2Dropped == false ||
+                                  _isA3Dropped == false)) {
+                            _erros += 1;
+                            print("Erros: $_erros");
+                            verificaPerdeu();
                           }
 
                           return dataFix['letter'] == _a;
@@ -575,22 +537,14 @@ class _GameBananaState extends State<GameBanana> {
                         onWillAccept: (data) {
                           dataFix = decodeJson(data);
 
-                          if (dataFix['draggableName'] == "N1") {
-                            if (!_isN1Dropped) {
-                              if (dataFix['letter'] != _n) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
-                          } else if (dataFix['draggableName'] == "N2") {
-                            if (!_isN2Dropped) {
-                              if (dataFix['letter'] != _n) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
+                          if ((dataFix['draggableName'] != "N1" ||
+                                  dataFix['draggableName'] != "N2") &&
+                              (dataFix['letter'] != _n) &&
+                              (_isN1Dropped == false ||
+                                  _isN2Dropped == false)) {
+                            _erros += 1;
+                            print("Erros: $_erros");
+                            verificaPerdeu();
                           }
 
                           return dataFix['letter'] == _n;
@@ -664,30 +618,16 @@ class _GameBananaState extends State<GameBanana> {
                         onWillAccept: (data) {
                           dataFix = decodeJson(data);
 
-                          if (dataFix['draggableName'] == "A1") {
-                            if (_isA1Dropped == false) {
-                              if (dataFix['letter'] != _a) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
-                          } else if (dataFix['draggableName'] == "A2") {
-                            if (_isA2Dropped == false) {
-                              if (dataFix['letter'] != _a) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
-                          } else if (dataFix['draggableName'] == "A3") {
-                            if (_isA3Dropped == false) {
-                              if (dataFix['letter'] != _a) {
-                                _erros += 1;
-                                print("Erros: $_erros");
-                                verificaPerdeu();
-                              }
-                            }
+                          if ((dataFix['draggableName'] != "A1" ||
+                                  dataFix['draggableName'] != "A2" ||
+                                  dataFix['draggableName'] != "A3") &&
+                              (dataFix['letter'] != _a) &&
+                              (_isA1Dropped == false ||
+                                  _isA2Dropped == false ||
+                                  _isA3Dropped == false)) {
+                            _erros += 1;
+                            print("Erros: $_erros");
+                            verificaPerdeu();
                           }
 
                           return dataFix['letter'] == _a;
