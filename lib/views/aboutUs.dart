@@ -169,8 +169,8 @@ class AboutUs extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(16),
                         child: Image.asset(
-                          'lib/assets/images/developers/silvia.jpeg',
-                          width: 100,
+                          'lib/assets/images/developers/naiara.jpeg',
+                          width: 113,
                           height: 150,
                           fit: BoxFit.fill,
                         ),
