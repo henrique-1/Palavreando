@@ -40,10 +40,10 @@ class Home extends StatelessWidget {
               children: [
                 Container(
                   margin: const EdgeInsets.only(
-                    left: 20,
+                    left: 10,
                     top: 5,
                   ),
-                  child: ElevatedButton(
+                  child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       textStyle: const TextStyle(
                         fontSize: 20,
@@ -55,8 +55,10 @@ class Home extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
-                    onPressed: () {},
-                    child: Text(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/chooseCharacter");
+                    },
+                    label: Text(
                       "JOGAR",
                       style: TextStyle(
                         decoration: TextDecoration.none,
@@ -66,42 +68,22 @@ class Home extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    icon: Icon(
+                      PhosphorIcons.regular.play,
+                      size: 36.0,
+                      color: Colors.deepOrange[900],
+                    ),
                   ),
                 ),
               ],
-            ),
-            const Spacer(),
-            Container(
-              margin: const EdgeInsets.only(
-                bottom: 95,
-              ),
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      fixedSize: const Size(190, 350),
-                      backgroundColor: Colors.black,
-                    ),
-                    child: const Text("Menino"),
-                  ),
-                  const Spacer(),
-                  TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      fixedSize: const Size(190, 350),
-                      backgroundColor: Colors.black,
-                    ),
-                    child: const Text("Menina"),
-                  ),
-                ],
-              ),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, "/aboutUs");
+        },
         backgroundColor: Colors.orange[300],
         label: Text(
           'Sobre nós',

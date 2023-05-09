@@ -15,12 +15,38 @@ dependencies:
     sdk: flutter
   google_fonts: ^4.0.3
   fluttertoast: ^8.2.1
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "lib/assets/icons/palavreando_logo.png"
+  min_sdk_android: 16 # android min sdk min:16, default 21
+  remove_alpha_ios: true
 
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - lib/assets/images/developers/henrique.jpeg
+    - lib/assets/images/developers/silvia.jpeg
+    - lib/assets/images/developers/bia.jpeg
+    - lib/assets/images/developers/rafael.jpeg
+    - lib/assets/images/developers/marina.jpeg
+    - lib/assets/images/characterSelect/girl/Menina1.png
+    - lib/assets/images/characterSelect/girl/Menina2.png
+    - lib/assets/images/characterSelect/girl/Menina3.png
+    - lib/assets/images/characterSelect/girl/Menina4.png
+    - lib/assets/images/characterSelect/boy/Menino1.png
+    - lib/assets/images/characterSelect/boy/Menino2.png
+    - lib/assets/images/characterSelect/boy/Menino3.png
+    - lib/assets/images/characterSelect/boy/Menino4.png
+    - lib/assets/images/tips/banana.png
+    - lib/assets/words/
+    - lib/assets/words/banana.json

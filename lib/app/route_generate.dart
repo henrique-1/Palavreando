@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:palavreando/views/aboutUs.dart';
+import 'package:palavreando/views/characterSelection.dart';
+import 'package:palavreando/views/chooseCharacter.dart';
+import 'package:palavreando/views/games/gameBanana.dart';
 import 'package:palavreando/views/home.dart';
 
 class RouteGenerator {
@@ -6,6 +10,16 @@ class RouteGenerator {
     switch (settings.name) {
       case "/":
         return MaterialPageRoute(builder: (_) => const Home());
+      case "/characterSelection":
+        return MaterialPageRoute(
+            builder: (_) =>
+                CharacterSelection(gender: settings.arguments as int));
+      case "/aboutUs":
+        return MaterialPageRoute(builder: (_) => const AboutUs());
+      case "/chooseCharacter":
+        return MaterialPageRoute(builder: (_) => const ChooseCharacter());
+      case "/gameBanana":
+        return MaterialPageRoute(builder: (_) => const GameBanana());
       default:
         return _erroRota();
     }
