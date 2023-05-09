@@ -170,7 +170,7 @@ class AboutUs extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                         child: Image.asset(
                           'lib/assets/images/developers/naiara.jpeg',
-                          width: 100,
+                          width: 113,
                           height: 150,
                           fit: BoxFit.fill,
                         ),
