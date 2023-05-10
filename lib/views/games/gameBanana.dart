@@ -111,109 +111,26 @@ class _GameBananaState extends State<GameBanana> {
       ),
       body: Stack(
         children: [
-          //Tip 1
+          //Background
           Visibility(
-            visible: _showTipOne,
             child: Container(
-              decoration: BoxDecoration(
-                color: Colors.transparent.withOpacity(0.5),
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              decoration: const BoxDecoration(
+                color: Colors.amber,
               ),
-              child: Column(
-                children: [
-                  const Spacer(),
-                  Container(
-                    height: 150,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(125),
-                      ),
-                      border: Border.all(
-                          color: Colors.black,
-                          width: 3.5,
-                          style: BorderStyle.solid),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Os macacos me adoram!",
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 200,
-                  ),
-                  SizedBox(
-                    height: 75,
-                    width: 150,
-                    child: FloatingActionButton.extended(
-                      onPressed: () {
-                        setState(() {
-                          _showTipOne = false;
-                        });
-                      },
-                      backgroundColor: Colors.orange[300],
-                      label: Text(
-                        'OKAY',
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 12,
-                          color: Colors.deepOrange[900],
-                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      icon: Icon(
-                        PhosphorIcons.regular.thumbsUp,
-                        size: 36.0,
-                        color: Colors.deepOrange[900],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                ],
-              ),
-              // FloatingActionButton: FloatingActionButton.extended(
-              //   onPressed: () {
-              //     setState(() {
-              //       _showTipOne = false;
-              //     });
-              //   },
-              //   backgroundColor: Colors.orange[300],
-              //   label: Text(
-              //     'OKAY',
-              //     style: TextStyle(
-              //       decoration: TextDecoration.none,
-              //       fontSize: 12,
-              //       color: Colors.deepOrange[900],
-              //       fontFamily: GoogleFonts.dynaPuff().fontFamily,
-              //       fontWeight: FontWeight.bold,
-              //     ),
-              //   ),
-              //   icon: Icon(
-              //     PhosphorIcons.regular.thumbsUp,
-              //     size: 36.0,
-              //     color: Colors.deepOrange[900],
-              //   ),
-              // ),
+              child: Stack(),
             ),
           ),
-
           //Game
           Visibility(
             visible: isTipEnabled(),
             child: Container(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  const SizedBox(
+                    height: 50,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -700,6 +617,9 @@ class _GameBananaState extends State<GameBanana> {
                         ),
                       ),
                     ],
+                  ),
+                  const SizedBox(
+                    height: 100,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1226,32 +1146,125 @@ class _GameBananaState extends State<GameBanana> {
               ),
             ),
           ),
-
-          //Background
-          Container(
-            child: Stack(),
+          //Tip 1
+          Visibility(
+            visible: _showTipOne,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent.withOpacity(0.5),
+              ),
+              child: Column(
+                children: [
+                  const Spacer(),
+                  Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(125),
+                      ),
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 3.5,
+                          style: BorderStyle.solid),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Os macacos me adoram!",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 200,
+                  ),
+                  SizedBox(
+                    height: 75,
+                    width: 150,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        setState(() {
+                          _showTipOne = false;
+                        });
+                      },
+                      backgroundColor: Colors.orange[300],
+                      label: Text(
+                        'OKAY',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          color: Colors.deepOrange[900],
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      icon: Icon(
+                        PhosphorIcons.regular.thumbsUp,
+                        size: 36.0,
+                        color: Colors.deepOrange[900],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                ],
+              ),
+              // FloatingActionButton: FloatingActionButton.extended(
+              //   onPressed: () {
+              //     setState(() {
+              //       _showTipOne = false;
+              //     });
+              //   },
+              //   backgroundColor: Colors.orange[300],
+              //   label: Text(
+              //     'OKAY',
+              //     style: TextStyle(
+              //       decoration: TextDecoration.none,
+              //       fontSize: 12,
+              //       color: Colors.deepOrange[900],
+              //       fontFamily: GoogleFonts.dynaPuff().fontFamily,
+              //       fontWeight: FontWeight.bold,
+              //     ),
+              //   ),
+              //   icon: Icon(
+              //     PhosphorIcons.regular.thumbsUp,
+              //     size: 36.0,
+              //     color: Colors.deepOrange[900],
+              //   ),
+              // ),
+            ),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: null,
-        backgroundColor: Colors.orange[300],
-        label: Text(
-          '$_erros',
-          style: TextStyle(
-            decoration: TextDecoration.none,
-            fontSize: 24,
-            color: Colors.deepOrange[900],
-            fontFamily: GoogleFonts.dynaPuff().fontFamily,
-            fontWeight: FontWeight.bold,
+      floatingActionButton: Visibility(
+        visible: isTipEnabled(),
+        child: FloatingActionButton.extended(
+          onPressed: null,
+          backgroundColor: Colors.orange[300],
+          label: Text(
+            '$_erros',
+            style: TextStyle(
+              decoration: TextDecoration.none,
+              fontSize: 24,
+              color: Colors.deepOrange[900],
+              fontFamily: GoogleFonts.dynaPuff().fontFamily,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          icon: Icon(
+            PhosphorIcons.regular.warning,
+            size: 36.0,
+            color: Colors.deepOrange[900],
+          ),
+          elevation: 0,
         ),
-        icon: Icon(
-          PhosphorIcons.regular.warning,
-          size: 36.0,
-          color: Colors.deepOrange[900],
-        ),
-        elevation: 0,
       ),
     );
   }
