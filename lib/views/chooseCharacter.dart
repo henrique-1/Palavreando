@@ -29,12 +29,14 @@ class ChooseCharacter extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.all(16),
-        height: double.infinity,
+        padding: const EdgeInsets.all(8),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: Colors.lime[200],
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             ElevatedButton(
               onPressed: () {
@@ -42,7 +44,9 @@ class ChooseCharacter extends StatelessWidget {
                     arguments: 0);
               },
               style: ElevatedButton.styleFrom(
-                fixedSize: const Size(190, 350),
+                maximumSize: const Size(190, 350),
+                //fixedSize: const Size(190, 350),
+                minimumSize: const Size(25, 46),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -54,14 +58,15 @@ class ChooseCharacter extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-            const Spacer(),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, "/characterSelection",
                     arguments: 1);
               },
               style: ElevatedButton.styleFrom(
-                fixedSize: const Size(190, 350),
+                maximumSize: const Size(190, 350),
+                //fixedSize: const Size(190, 350),
+                minimumSize: const Size(25, 46),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),

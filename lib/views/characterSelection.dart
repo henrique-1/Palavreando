@@ -38,11 +38,14 @@ class _CharacterSelectionState extends State<CharacterSelection> {
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: Colors.lime[200],
         ),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +59,9 @@ class _CharacterSelectionState extends State<CharacterSelection> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
-                    fixedSize: const Size(190, 350),
+                    maximumSize: const Size(190, 350),
+                    //fixedSize: const Size(190, 350),
+                    minimumSize: const Size(25, 46),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                       side: BorderSide(
@@ -84,7 +89,9 @@ class _CharacterSelectionState extends State<CharacterSelection> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
-                    fixedSize: const Size(190, 350),
+                    maximumSize: const Size(190, 350),
+                    //fixedSize: const Size(190, 350),
+                    minimumSize: const Size(25, 46),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                       side: BorderSide(
@@ -105,7 +112,6 @@ class _CharacterSelectionState extends State<CharacterSelection> {
                 ),
               ],
             ),
-            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -118,7 +124,9 @@ class _CharacterSelectionState extends State<CharacterSelection> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
-                    fixedSize: const Size(190, 350),
+                    maximumSize: const Size(190, 350),
+                    //fixedSize: const Size(190, 350),
+                    minimumSize: const Size(25, 46),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                       side: BorderSide(
@@ -146,7 +154,9 @@ class _CharacterSelectionState extends State<CharacterSelection> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
-                    fixedSize: const Size(190, 350),
+                    maximumSize: const Size(190, 350),
+                    //fixedSize: const Size(190, 350),
+                    minimumSize: const Size(25, 46),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                       side: BorderSide(
@@ -166,9 +176,6 @@ class _CharacterSelectionState extends State<CharacterSelection> {
                   ),
                 ),
               ],
-            ),
-            const SizedBox(
-              height: 56,
             ),
           ],
         ),
