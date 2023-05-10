@@ -204,7 +204,7 @@ class _CharacterSelectionState extends State<CharacterSelection> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        icon: Icon(
+        icon: PhosphorIcon(
           PhosphorIcons.regular.play,
           size: 36.0,
           color: _isSelected ? Colors.deepOrange[900] : Colors.black,

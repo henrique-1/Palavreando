@@ -365,7 +365,7 @@ class AboutUs extends StatelessWidget {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    Icon(
+                    PhosphorIcon(
                       PhosphorIcons.regular.airplane,
                       size: 64.0,
                     )
@@ -381,7 +381,7 @@ class AboutUs extends StatelessWidget {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    Icon(
+                    PhosphorIcon(
                       PhosphorIcons.regular.phosphorLogo,
                       size: 64.0,
                     )
@@ -397,7 +397,7 @@ class AboutUs extends StatelessWidget {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    Icon(
+                    PhosphorIcon(
                       PhosphorIcons.regular.googleLogo,
                       size: 64.0,
                     )

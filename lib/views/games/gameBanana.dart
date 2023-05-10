@@ -28,6 +28,7 @@ class _GameBananaState extends State<GameBanana> {
   bool _showTipTwo = false;
   bool _showTipThree = false;
   bool _showLostScreen = false;
+  final bool _showWinGameScreen = false;
 
   dynamic dataFix;
 
@@ -74,7 +75,6 @@ class _GameBananaState extends State<GameBanana> {
   }
 
   bool isTipEnabled() {
-    print(_showLostScreen);
     if (_showTipOne == true) {
       return false;
     } else if (_showTipTwo == true) {
@@ -82,6 +82,8 @@ class _GameBananaState extends State<GameBanana> {
     } else if (_showTipThree == true) {
       return false;
     } else if (_showLostScreen == true) {
+      return false;
+    } else if (_showWinGameScreen == true) {
       return false;
     }
 
@@ -1210,7 +1212,7 @@ class _GameBananaState extends State<GameBanana> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      icon: Icon(
+                      icon: PhosphorIcon(
                         PhosphorIcons.regular.thumbsUp,
                         size: 36.0,
                         color: Colors.deepOrange[900],
@@ -1282,7 +1284,7 @@ class _GameBananaState extends State<GameBanana> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      icon: Icon(
+                      icon: PhosphorIcon(
                         PhosphorIcons.regular.thumbsUp,
                         size: 36.0,
                         color: Colors.deepOrange[900],
@@ -1354,7 +1356,7 @@ class _GameBananaState extends State<GameBanana> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      icon: Icon(
+                      icon: PhosphorIcon(
                         PhosphorIcons.regular.thumbsUp,
                         size: 36.0,
                         color: Colors.deepOrange[900],
@@ -1427,7 +1429,7 @@ class _GameBananaState extends State<GameBanana> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      icon: Icon(
+                      icon: PhosphorIcon(
                         PhosphorIcons.regular.thumbsUp,
                         size: 36.0,
                         color: Colors.deepOrange[900],
@@ -1458,7 +1460,7 @@ class _GameBananaState extends State<GameBanana> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          icon: Icon(
+          icon: PhosphorIcon(
             PhosphorIcons.regular.warning,
             size: 36.0,
             color: Colors.deepOrange[900],

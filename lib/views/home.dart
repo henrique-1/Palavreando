@@ -68,7 +68,7 @@ class Home extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    icon: Icon(
+                    icon: PhosphorIcon(
                       PhosphorIcons.regular.play,
                       size: 36.0,
                       color: Colors.deepOrange[900],
@@ -95,7 +95,7 @@ class Home extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        icon: Icon(
+        icon: PhosphorIcon(
           PhosphorIcons.regular.usersThree,
           size: 36.0,
           color: Colors.deepOrange[900],
