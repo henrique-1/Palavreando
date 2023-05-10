@@ -116,10 +116,13 @@ class _GameBananaState extends State<GameBanana> {
             child: Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                color: Colors.amber,
+              decoration: BoxDecoration(
+                color: Colors.lime.shade200,
               ),
-              child: Stack(),
+              child: Stack(
+                alignment: Alignment.bottomLeft,
+                children: const [],
+              ),
             ),
           ),
           //Game

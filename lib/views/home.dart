@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: Colors.lime[200],
         ),
