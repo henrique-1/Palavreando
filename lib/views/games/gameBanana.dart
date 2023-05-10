@@ -27,6 +27,7 @@ class _GameBananaState extends State<GameBanana> {
   bool _showTipOne = false;
   bool _showTipTwo = false;
   bool _showTipThree = false;
+  bool _showLostScreen = false;
 
   dynamic dataFix;
 
@@ -51,6 +52,7 @@ class _GameBananaState extends State<GameBanana> {
       });
     } else if (_erros == 5) {
       print("Perdeu");
+      _showLostScreen = true;
     }
   }
 
@@ -72,16 +74,17 @@ class _GameBananaState extends State<GameBanana> {
   }
 
   bool isTipEnabled() {
-    print(_showTipOne);
-    print(_showTipTwo);
-    print(_showTipThree);
+    print(_showLostScreen);
     if (_showTipOne == true) {
       return false;
     } else if (_showTipTwo == true) {
       return false;
     } else if (_showTipThree == true) {
       return false;
+    } else if (_showLostScreen == true) {
+      return false;
     }
+
     return true;
   }
 
@@ -1219,31 +1222,9 @@ class _GameBananaState extends State<GameBanana> {
                   ),
                 ],
               ),
-              // FloatingActionButton: FloatingActionButton.extended(
-              //   onPressed: () {
-              //     setState(() {
-              //       _showTipOne = false;
-              //     });
-              //   },
-              //   backgroundColor: Colors.orange[300],
-              //   label: Text(
-              //     'OKAY',
-              //     style: TextStyle(
-              //       decoration: TextDecoration.none,
-              //       fontSize: 12,
-              //       color: Colors.deepOrange[900],
-              //       fontFamily: GoogleFonts.dynaPuff().fontFamily,
-              //       fontWeight: FontWeight.bold,
-              //     ),
-              //   ),
-              //   icon: Icon(
-              //     PhosphorIcons.regular.thumbsUp,
-              //     size: 36.0,
-              //     color: Colors.deepOrange[900],
-              //   ),
-              // ),
             ),
           ),
+          // Tip2
           Visibility(
             visible: _showTipTwo,
             child: Container(
@@ -1287,7 +1268,7 @@ class _GameBananaState extends State<GameBanana> {
                     child: FloatingActionButton.extended(
                       onPressed: () {
                         setState(() {
-                          _showTipOne = false;
+                          _showTipTwo = false;
                         });
                       },
                       backgroundColor: Colors.orange[300],
@@ -1313,31 +1294,9 @@ class _GameBananaState extends State<GameBanana> {
                   ),
                 ],
               ),
-              // FloatingActionButton: FloatingActionButton.extended(
-              //   onPressed: () {
-              //     setState(() {
-              //       _showTipOne = false;
-              //     });
-              //   },
-              //   backgroundColor: Colors.orange[300],
-              //   label: Text(
-              //     'OKAY',
-              //     style: TextStyle(
-              //       decoration: TextDecoration.none,
-              //       fontSize: 12,
-              //       color: Colors.deepOrange[900],
-              //       fontFamily: GoogleFonts.dynaPuff().fontFamily,
-              //       fontWeight: FontWeight.bold,
-              //     ),
-              //   ),
-              //   icon: Icon(
-              //     PhosphorIcons.regular.thumbsUp,
-              //     size: 36.0,
-              //     color: Colors.deepOrange[900],
-              //   ),
-              // ),
             ),
           ),
+          // Tip3
           Visibility(
             visible: _showTipThree,
             child: Container(
@@ -1381,7 +1340,7 @@ class _GameBananaState extends State<GameBanana> {
                     child: FloatingActionButton.extended(
                       onPressed: () {
                         setState(() {
-                          _showTipOne = false;
+                          _showTipThree = false;
                         });
                       },
                       backgroundColor: Colors.orange[300],
@@ -1407,29 +1366,79 @@ class _GameBananaState extends State<GameBanana> {
                   ),
                 ],
               ),
-              // FloatingActionButton: FloatingActionButton.extended(
-              //   onPressed: () {
-              //     setState(() {
-              //       _showTipOne = false;
-              //     });
-              //   },
-              //   backgroundColor: Colors.orange[300],
-              //   label: Text(
-              //     'OKAY',
-              //     style: TextStyle(
-              //       decoration: TextDecoration.none,
-              //       fontSize: 12,
-              //       color: Colors.deepOrange[900],
-              //       fontFamily: GoogleFonts.dynaPuff().fontFamily,
-              //       fontWeight: FontWeight.bold,
-              //     ),
-              //   ),
-              //   icon: Icon(
-              //     PhosphorIcons.regular.thumbsUp,
-              //     size: 36.0,
-              //     color: Colors.deepOrange[900],
-              //   ),
-              // ),
+            ),
+          ),
+          //Lost Game
+          Visibility(
+            visible: _showLostScreen,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent.withOpacity(0.5),
+              ),
+              child: Column(
+                children: [
+                  const Spacer(),
+                  Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(125),
+                      ),
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 3.5,
+                          style: BorderStyle.solid),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Você perdeu :(",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 200,
+                  ),
+                  SizedBox(
+                    height: 75,
+                    width: 150,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        setState(() {
+                          _showLostScreen = false;
+                        });
+                        Navigator.pushNamed(context, "/");
+                      },
+                      backgroundColor: Colors.orange[300],
+                      label: Text(
+                        'OKAY',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          color: Colors.deepOrange[900],
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      icon: Icon(
+                        PhosphorIcons.regular.thumbsUp,
+                        size: 36.0,
+                        color: Colors.deepOrange[900],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
