@@ -1244,6 +1244,194 @@ class _GameBananaState extends State<GameBanana> {
               // ),
             ),
           ),
+          Visibility(
+            visible: _showTipTwo,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent.withOpacity(0.5),
+              ),
+              child: Column(
+                children: [
+                  const Spacer(),
+                  Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(125),
+                      ),
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 3.5,
+                          style: BorderStyle.solid),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Posso ser encontrado em cachos",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 200,
+                  ),
+                  SizedBox(
+                    height: 75,
+                    width: 150,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        setState(() {
+                          _showTipOne = false;
+                        });
+                      },
+                      backgroundColor: Colors.orange[300],
+                      label: Text(
+                        'OKAY',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          color: Colors.deepOrange[900],
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      icon: Icon(
+                        PhosphorIcons.regular.thumbsUp,
+                        size: 36.0,
+                        color: Colors.deepOrange[900],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                ],
+              ),
+              // FloatingActionButton: FloatingActionButton.extended(
+              //   onPressed: () {
+              //     setState(() {
+              //       _showTipOne = false;
+              //     });
+              //   },
+              //   backgroundColor: Colors.orange[300],
+              //   label: Text(
+              //     'OKAY',
+              //     style: TextStyle(
+              //       decoration: TextDecoration.none,
+              //       fontSize: 12,
+              //       color: Colors.deepOrange[900],
+              //       fontFamily: GoogleFonts.dynaPuff().fontFamily,
+              //       fontWeight: FontWeight.bold,
+              //     ),
+              //   ),
+              //   icon: Icon(
+              //     PhosphorIcons.regular.thumbsUp,
+              //     size: 36.0,
+              //     color: Colors.deepOrange[900],
+              //   ),
+              // ),
+            ),
+          ),
+          Visibility(
+            visible: _showTipThree,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent.withOpacity(0.5),
+              ),
+              child: Column(
+                children: [
+                  const Spacer(),
+                  Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(125),
+                      ),
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 3.5,
+                          style: BorderStyle.solid),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Sou amarela",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 200,
+                  ),
+                  SizedBox(
+                    height: 75,
+                    width: 150,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        setState(() {
+                          _showTipOne = false;
+                        });
+                      },
+                      backgroundColor: Colors.orange[300],
+                      label: Text(
+                        'OKAY',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          color: Colors.deepOrange[900],
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      icon: Icon(
+                        PhosphorIcons.regular.thumbsUp,
+                        size: 36.0,
+                        color: Colors.deepOrange[900],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                ],
+              ),
+              // FloatingActionButton: FloatingActionButton.extended(
+              //   onPressed: () {
+              //     setState(() {
+              //       _showTipOne = false;
+              //     });
+              //   },
+              //   backgroundColor: Colors.orange[300],
+              //   label: Text(
+              //     'OKAY',
+              //     style: TextStyle(
+              //       decoration: TextDecoration.none,
+              //       fontSize: 12,
+              //       color: Colors.deepOrange[900],
+              //       fontFamily: GoogleFonts.dynaPuff().fontFamily,
+              //       fontWeight: FontWeight.bold,
+              //     ),
+              //   ),
+              //   icon: Icon(
+              //     PhosphorIcons.regular.thumbsUp,
+              //     size: 36.0,
+              //     color: Colors.deepOrange[900],
+              //   ),
+              // ),
+            ),
+          ),
         ],
       ),
       floatingActionButton: Visibility(
