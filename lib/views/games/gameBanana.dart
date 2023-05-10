@@ -54,6 +54,12 @@ class _GameBananaState extends State<GameBanana> {
     }
   }
 
+  void aumentaErros() {
+    setState(() {
+      _erros += 1;
+    });
+  }
+
   void verificaGanhou() {
     if (_isBDropped &&
         _isA1Dropped &&
@@ -215,10 +221,12 @@ class _GameBananaState extends State<GameBanana> {
                         onWillAccept: (data) {
                           dataFix = decodeJson(data);
                           if (dataFix['draggableName'] != "B") {
-                            if (dataFix['letter'] != _b) {
-                              _erros += 1;
-                              print("Erros: $_erros");
-                              verificaPerdeu();
+                            if (_isBDropped == false) {
+                              if (dataFix['letter'] != _b) {
+                                aumentaErros();
+                                print("Erros: $_erros");
+                                verificaPerdeu();
+                              }
                             }
                           }
 
@@ -290,10 +298,8 @@ class _GameBananaState extends State<GameBanana> {
                                   dataFix['draggableName'] != "A2" ||
                                   dataFix['draggableName'] != "A3") &&
                               (dataFix['letter'] != _a) &&
-                              (_isA1Dropped == false ||
-                                  _isA2Dropped == false ||
-                                  _isA3Dropped == false)) {
-                            _erros += 1;
+                              (_isA1Dropped == false)) {
+                            aumentaErros();
                             print("Erros: $_erros");
                             verificaPerdeu();
                           }
@@ -374,9 +380,8 @@ class _GameBananaState extends State<GameBanana> {
                           if ((dataFix['draggableName'] != "N1" ||
                                   dataFix['draggableName'] != "N2") &&
                               (dataFix['letter'] != _n) &&
-                              (_isN1Dropped == false ||
-                                  _isN2Dropped == false)) {
-                            _erros += 1;
+                              (_isN1Dropped == false)) {
+                            aumentaErros();
                             print("Erros: $_erros");
                             verificaPerdeu();
                           }
@@ -456,10 +461,8 @@ class _GameBananaState extends State<GameBanana> {
                                   dataFix['draggableName'] != "A2" ||
                                   dataFix['draggableName'] != "A3") &&
                               (dataFix['letter'] != _a) &&
-                              (_isA1Dropped == false ||
-                                  _isA2Dropped == false ||
-                                  _isA3Dropped == false)) {
-                            _erros += 1;
+                              (_isA2Dropped == false)) {
+                            aumentaErros();
                             print("Erros: $_erros");
                             verificaPerdeu();
                           }
@@ -540,9 +543,8 @@ class _GameBananaState extends State<GameBanana> {
                           if ((dataFix['draggableName'] != "N1" ||
                                   dataFix['draggableName'] != "N2") &&
                               (dataFix['letter'] != _n) &&
-                              (_isN1Dropped == false ||
-                                  _isN2Dropped == false)) {
-                            _erros += 1;
+                              (_isN2Dropped == false)) {
+                            aumentaErros();
                             print("Erros: $_erros");
                             verificaPerdeu();
                           }
@@ -622,10 +624,8 @@ class _GameBananaState extends State<GameBanana> {
                                   dataFix['draggableName'] != "A2" ||
                                   dataFix['draggableName'] != "A3") &&
                               (dataFix['letter'] != _a) &&
-                              (_isA1Dropped == false ||
-                                  _isA2Dropped == false ||
-                                  _isA3Dropped == false)) {
-                            _erros += 1;
+                              (_isA3Dropped == false)) {
+                            aumentaErros();
                             print("Erros: $_erros");
                             verificaPerdeu();
                           }
@@ -1232,6 +1232,26 @@ class _GameBananaState extends State<GameBanana> {
             child: Stack(),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: null,
+        backgroundColor: Colors.orange[300],
+        label: Text(
+          '$_erros',
+          style: TextStyle(
+            decoration: TextDecoration.none,
+            fontSize: 24,
+            color: Colors.deepOrange[900],
+            fontFamily: GoogleFonts.dynaPuff().fontFamily,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        icon: Icon(
+          PhosphorIcons.regular.warning,
+          size: 36.0,
+          color: Colors.deepOrange[900],
+        ),
+        elevation: 0,
       ),
     );
   }
