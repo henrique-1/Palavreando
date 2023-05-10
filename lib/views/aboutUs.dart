@@ -117,7 +117,7 @@ class AboutUs extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        "Desenvolveu a porra toda",
+                        "Escreveu o projeto",
                         style: TextStyle(
                           fontSize: 12,
                           fontFamily: GoogleFonts.dynaPuff().fontFamily,
@@ -153,7 +153,7 @@ class AboutUs extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        "Desenvolveu a porra toda",
+                        "Escreveu o projeto",
                         style: TextStyle(
                           fontSize: 12,
                           fontFamily: GoogleFonts.dynaPuff().fontFamily,
@@ -189,7 +189,7 @@ class AboutUs extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        "Desenvolveu a porra toda",
+                        "Escreveu o projeto",
                         style: TextStyle(
                           fontSize: 12,
                           fontFamily: GoogleFonts.dynaPuff().fontFamily,
@@ -225,7 +225,7 @@ class AboutUs extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        "Desenvolveu a porra toda",
+                        "Escreveu o projeto",
                         style: TextStyle(
                           fontSize: 12,
                           fontFamily: GoogleFonts.dynaPuff().fontFamily,
