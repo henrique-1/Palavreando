@@ -89,6 +89,7 @@ class AboutUs extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            const SizedBox(height: 15),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -127,6 +128,7 @@ class AboutUs extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SizedBox(height: 5),
                 Container(
                   alignment: Alignment.center,
                   child: Column(
@@ -162,6 +164,7 @@ class AboutUs extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SizedBox(height: 5),
                 Container(
                   alignment: Alignment.center,
                   child: Column(
@@ -197,6 +200,7 @@ class AboutUs extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SizedBox(height: 5),
                 Container(
                   alignment: Alignment.center,
                   child: Column(
