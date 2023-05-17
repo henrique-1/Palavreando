@@ -151,6 +151,23 @@ class _CharacterSelectionState extends State<CharacterSelection> {
                       _index = 4;
                       _isSelected = true;
                     });
+                    var snack = SnackBar(
+                      content: Text(
+                        "Vamos jogar!",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 24,
+                          color: Colors.deepOrange[900],
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      duration: const Duration(seconds: 1),
+                      backgroundColor: Colors.orange[300],
+                    );
+                    ScaffoldMessenger.of(context).removeCurrentSnackBar();
+                    ScaffoldMessenger.of(context).showSnackBar(snack);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -185,9 +202,19 @@ class _CharacterSelectionState extends State<CharacterSelection> {
           if (_index != 0) {
             Navigator.pushNamed(context, "/gameBanana");
           } else {
-            const snack = SnackBar(
-              content: Text("Selecione um personagem primeiro"),
-              duration: Duration(seconds: 1),
+            var snack = SnackBar(
+              content: Text(
+                "Selecione um personagem primeiro.",
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  fontSize: 16,
+                  color: Colors.deepOrange[900],
+                  fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              backgroundColor: Colors.orange[300],
+              duration: const Duration(seconds: 2),
             );
             ScaffoldMessenger.of(context).removeCurrentSnackBar();
             ScaffoldMessenger.of(context).showSnackBar(snack);
@@ -198,7 +225,7 @@ class _CharacterSelectionState extends State<CharacterSelection> {
           'JOGAR',
           style: TextStyle(
             decoration: TextDecoration.none,
-            fontSize: 12,
+            fontSize: 24,
             color: _isSelected ? Colors.deepOrange[900] : Colors.black,
             fontFamily: GoogleFonts.dynaPuff().fontFamily,
             fontWeight: FontWeight.bold,

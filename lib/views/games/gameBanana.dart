@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -91,6 +93,27 @@ class _GameBananaState extends State<GameBanana> {
   }
 
   @override
+  initState() {
+    super.initState();
+    var words = [
+      "lib/assets/words/banana.json",
+    ];
+
+    print((Random().nextInt(words.length) + 0).toString());
+    //var jsonFile = readFile(words[(Random().nextInt(0) + 0)]);
+  }
+
+  readFile(words) async {
+    var jsonFile = await rootBundle.loadString(words);
+    Map<String, dynamic> word = json.decode(jsonFile);
+
+    print(word['tipo']);
+    print(word['palavra']);
+    print(word['dicas']);
+    print(word['dicaImagem']);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -163,6 +186,12 @@ class _GameBananaState extends State<GameBanana> {
                             _isBDropped = true;
                           });
                           verificaGanhou();
+                        },
+                        onLeave: (data) {
+                          print("passou por cima");
+                        },
+                        onMove: (details) {
+                          print("Moved");
                         },
                         builder: (BuildContext context, List<dynamic> accepted,
                                 List<dynamic> rejected) =>
@@ -1068,6 +1097,16 @@ class _GameBananaState extends State<GameBanana> {
                             visible: !_isBDropped,
                             child: Draggable<Object>(
                               data: '{"draggableName": "B", "letter": "$_b"}',
+                              onDragStarted: () {
+                                print("Começou a apertar");
+                              },
+                              onDragCompleted: () {
+                                print("Finalizou e encaixou");
+                              },
+                              onDragEnd: (details) {
+                                print(details);
+                                print("Finalizou o movimento");
+                              },
                               feedback: SizedBox(
                                 height: 100,
                                 width: 60,
