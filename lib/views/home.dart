@@ -60,15 +60,15 @@ class Home extends StatelessWidget {
                     },
                     label: Text(
                       "JOGAR",
-                      style: TextStyle(
+                      style: GoogleFonts.dynaPuff(
                         decoration: TextDecoration.none,
-                        fontSize: 38,
+                        fontSize: 36,
                         color: Colors.deepOrange[900],
-                        fontFamily: GoogleFonts.dynaPuff().fontFamily,
                         fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.normal,
                       ),
                     ),
-                    icon: Icon(
+                    icon: PhosphorIcon(
                       PhosphorIcons.regular.play,
                       size: 36.0,
                       color: Colors.deepOrange[900],
@@ -87,15 +87,15 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.orange[300],
         label: Text(
           'Sobre nós',
-          style: TextStyle(
+          style: GoogleFonts.dynaPuff(
             decoration: TextDecoration.none,
             fontSize: 12,
             color: Colors.deepOrange[900],
-            fontFamily: GoogleFonts.dynaPuff().fontFamily,
             fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.normal,
           ),
         ),
-        icon: Icon(
+        icon: PhosphorIcon(
           PhosphorIcons.regular.usersThree,
           size: 36.0,
           color: Colors.deepOrange[900],

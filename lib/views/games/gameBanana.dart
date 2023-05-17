@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -27,6 +29,8 @@ class _GameBananaState extends State<GameBanana> {
   bool _showTipOne = false;
   bool _showTipTwo = false;
   bool _showTipThree = false;
+  bool _showLostScreen = false;
+  final bool _showWinGameScreen = false;
 
   dynamic dataFix;
 
@@ -51,6 +55,7 @@ class _GameBananaState extends State<GameBanana> {
       });
     } else if (_erros == 5) {
       print("Perdeu");
+      _showLostScreen = true;
     }
   }
 
@@ -72,17 +77,40 @@ class _GameBananaState extends State<GameBanana> {
   }
 
   bool isTipEnabled() {
-    print(_showTipOne);
-    print(_showTipTwo);
-    print(_showTipThree);
     if (_showTipOne == true) {
       return false;
     } else if (_showTipTwo == true) {
       return false;
     } else if (_showTipThree == true) {
       return false;
+    } else if (_showLostScreen == true) {
+      return false;
+    } else if (_showWinGameScreen == true) {
+      return false;
     }
+
     return true;
+  }
+
+  @override
+  initState() {
+    super.initState();
+    var words = [
+      "lib/assets/words/banana.json",
+    ];
+
+    print((Random().nextInt(words.length) + 0).toString());
+    //var jsonFile = readFile(words[(Random().nextInt(0) + 0)]);
+  }
+
+  readFile(words) async {
+    var jsonFile = await rootBundle.loadString(words);
+    Map<String, dynamic> word = json.decode(jsonFile);
+
+    print(word['tipo']);
+    print(word['palavra']);
+    print(word['dicas']);
+    print(word['dicaImagem']);
   }
 
   @override
@@ -158,6 +186,12 @@ class _GameBananaState extends State<GameBanana> {
                             _isBDropped = true;
                           });
                           verificaGanhou();
+                        },
+                        onLeave: (data) {
+                          print("passou por cima");
+                        },
+                        onMove: (details) {
+                          print("Moved");
                         },
                         builder: (BuildContext context, List<dynamic> accepted,
                                 List<dynamic> rejected) =>
@@ -1063,6 +1097,16 @@ class _GameBananaState extends State<GameBanana> {
                             visible: !_isBDropped,
                             child: Draggable<Object>(
                               data: '{"draggableName": "B", "letter": "$_b"}',
+                              onDragStarted: () {
+                                print("Começou a apertar");
+                              },
+                              onDragCompleted: () {
+                                print("Finalizou e encaixou");
+                              },
+                              onDragEnd: (details) {
+                                print(details);
+                                print("Finalizou o movimento");
+                              },
                               feedback: SizedBox(
                                 height: 100,
                                 width: 60,
@@ -1207,7 +1251,7 @@ class _GameBananaState extends State<GameBanana> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      icon: Icon(
+                      icon: PhosphorIcon(
                         PhosphorIcons.regular.thumbsUp,
                         size: 36.0,
                         color: Colors.deepOrange[900],
@@ -1219,29 +1263,223 @@ class _GameBananaState extends State<GameBanana> {
                   ),
                 ],
               ),
-              // FloatingActionButton: FloatingActionButton.extended(
-              //   onPressed: () {
-              //     setState(() {
-              //       _showTipOne = false;
-              //     });
-              //   },
-              //   backgroundColor: Colors.orange[300],
-              //   label: Text(
-              //     'OKAY',
-              //     style: TextStyle(
-              //       decoration: TextDecoration.none,
-              //       fontSize: 12,
-              //       color: Colors.deepOrange[900],
-              //       fontFamily: GoogleFonts.dynaPuff().fontFamily,
-              //       fontWeight: FontWeight.bold,
-              //     ),
-              //   ),
-              //   icon: Icon(
-              //     PhosphorIcons.regular.thumbsUp,
-              //     size: 36.0,
-              //     color: Colors.deepOrange[900],
-              //   ),
-              // ),
+            ),
+          ),
+          // Tip2
+          Visibility(
+            visible: _showTipTwo,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent.withOpacity(0.5),
+              ),
+              child: Column(
+                children: [
+                  const Spacer(),
+                  Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(125),
+                      ),
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 3.5,
+                          style: BorderStyle.solid),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Posso ser encontrado em cachos",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 200,
+                  ),
+                  SizedBox(
+                    height: 75,
+                    width: 150,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        setState(() {
+                          _showTipTwo = false;
+                        });
+                      },
+                      backgroundColor: Colors.orange[300],
+                      label: Text(
+                        'OKAY',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          color: Colors.deepOrange[900],
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      icon: PhosphorIcon(
+                        PhosphorIcons.regular.thumbsUp,
+                        size: 36.0,
+                        color: Colors.deepOrange[900],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          // Tip3
+          Visibility(
+            visible: _showTipThree,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent.withOpacity(0.5),
+              ),
+              child: Column(
+                children: [
+                  const Spacer(),
+                  Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(125),
+                      ),
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 3.5,
+                          style: BorderStyle.solid),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Sou amarela",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 200,
+                  ),
+                  SizedBox(
+                    height: 75,
+                    width: 150,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        setState(() {
+                          _showTipThree = false;
+                        });
+                      },
+                      backgroundColor: Colors.orange[300],
+                      label: Text(
+                        'OKAY',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          color: Colors.deepOrange[900],
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      icon: PhosphorIcon(
+                        PhosphorIcons.regular.thumbsUp,
+                        size: 36.0,
+                        color: Colors.deepOrange[900],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          //Lost Game
+          Visibility(
+            visible: _showLostScreen,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent.withOpacity(0.5),
+              ),
+              child: Column(
+                children: [
+                  const Spacer(),
+                  Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(125),
+                      ),
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 3.5,
+                          style: BorderStyle.solid),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Você perdeu :(",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 200,
+                  ),
+                  SizedBox(
+                    height: 75,
+                    width: 150,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        setState(() {
+                          _showLostScreen = false;
+                        });
+                        Navigator.pushNamed(context, "/");
+                      },
+                      backgroundColor: Colors.orange[300],
+                      label: Text(
+                        'OKAY',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          color: Colors.deepOrange[900],
+                          fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      icon: PhosphorIcon(
+                        PhosphorIcons.regular.thumbsUp,
+                        size: 36.0,
+                        color: Colors.deepOrange[900],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -1261,7 +1499,7 @@ class _GameBananaState extends State<GameBanana> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          icon: Icon(
+          icon: PhosphorIcon(
             PhosphorIcons.regular.warning,
             size: 36.0,
             color: Colors.deepOrange[900],
