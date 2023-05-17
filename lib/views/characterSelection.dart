@@ -200,7 +200,7 @@ class _CharacterSelectionState extends State<CharacterSelection> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           if (_index != 0) {
-            Navigator.pushNamed(context, "/gameBanana");
+            Navigator.pushNamed(context, "/game");
           } else {
             var snack = SnackBar(
               content: Text(

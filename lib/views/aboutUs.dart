@@ -45,8 +45,9 @@ class AboutUs extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            const SizedBox(height: 15),
             Text(
-              "Lorem ipsum",
+              "Palavreando é um aplicativo lúdico e divertido em que a criança deve acertar qual é a palavra proposta tendo como dica o número de letras e o tema ligado à palavra.",
               style: TextStyle(
                 fontSize: 14,
                 fontFamily: GoogleFonts.dynaPuff().fontFamily,
@@ -67,13 +68,44 @@ class AboutUs extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            const SizedBox(height: 15),
             Text(
-              "Lorem ipsum",
+              "A alfabetização é mais do que saber ler e escrever. Ela é a porta de entrada para que o indivíduo se torne um ser letrado, atuante e crítico dentro da sociedade, por isso, é muito importante que o processo de aquisição desse conhecimento alcance o maior número possível de pessoas. No contexto infantil, sabe-se do valor dos jogos no desenvolvimento cognitivo e como eles podem ser um grande aliado no aprendizado, incluindo crianças que se encontram no Transtorno do Espectro Autista (TEA), que podem demandar diferentes métodos para se alcançar o mesmo objetivo. O trabalho apresenta o desenvolvimento de um aplicativo de jogo educacional para auxiliar na alfabetização tanto de crianças neurotípicas quanto neuroatípicas, buscando atingir as seguintes habilidades da Base Nacional Curricular Comum.",
               style: TextStyle(
                 fontSize: 14,
                 fontFamily: GoogleFonts.dynaPuff().fontFamily,
                 fontWeight: FontWeight.normal,
               ),
+              textAlign: TextAlign.justify,
+            ),
+            const SizedBox(height: 5),
+            Text(
+              "EF02LP02 - Segmentar palavras em sílabas e remover e substituir sílabas iniciais, mediais ou finais para criar novas palavras",
+              style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                  fontWeight: FontWeight.normal,
+                  fontStyle: FontStyle.italic),
+              textAlign: TextAlign.justify,
+            ),
+            const SizedBox(height: 5),
+            Text(
+              "EF02LP03 - Ler e escrever palavras com correspondências regulares diretas entre letras e fonemas (f, v, t, d, p, b) e correspondências regulares contextuais (c e q; e e o, em posição átona em final de palavra)",
+              style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                  fontWeight: FontWeight.normal,
+                  fontStyle: FontStyle.italic),
+              textAlign: TextAlign.justify,
+            ),
+            const SizedBox(height: 5),
+            Text(
+              "EF02LP04 - Ler e escrever corretamente palavras com sílabas CV, V, CVC, CCV, identificando que existem vogais em todas as sílabas.",
+              style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: GoogleFonts.dynaPuff().fontFamily,
+                  fontWeight: FontWeight.normal,
+                  fontStyle: FontStyle.italic),
               textAlign: TextAlign.justify,
             ),
             const Divider(
