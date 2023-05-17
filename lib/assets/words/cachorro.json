@@ -1,0 +1,6 @@
+{
+  "tipo": "objeto",
+  "palavra": "casa",
+  "dicas": ["Lugar onde se mora.", "Tenho vários cômodos.", "Tenho um telhado."],
+  "dicaImagem": "lib/assets/images/tips/banana.png"
+}

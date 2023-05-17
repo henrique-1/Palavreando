@@ -1,0 +1,6 @@
+{
+  "tipo": "meio de transporte",
+  "palavra": "avião",
+  "dicas": ["Voo, mas não sou pássaro.", "Sou chamado de pássaro de aço.", "Funciono com motores e asas."],
+  "dicaImagem": "lib/assets/images/tips/banana.png"
+}

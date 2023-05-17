@@ -97,6 +97,15 @@ class _GameBananaState extends State<GameBanana> {
     super.initState();
     var words = [
       "lib/assets/words/banana.json",
+      "lib/assets/words/aviao.json",
+      "lib/assets/words/boneca.json",
+      "lib/assets/words/cachorro.json",
+      "lib/assets/words/casa.json",
+      "lib/assets/words/galinha.json",
+      "lib/assets/words/gato.json",
+      "lib/assets/words/lapis.json",
+      "lib/assets/words/lua.json",
+      "lib/assets/words/professora.json",
     ];
 
     print((Random().nextInt(words.length) + 0).toString());
