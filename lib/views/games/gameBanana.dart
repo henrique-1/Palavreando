@@ -92,25 +92,51 @@ class _GameBananaState extends State<GameBanana> {
     return true;
   }
 
+  String _tipo = "";
+  String _palavra = "";
+  List _wordArray = [];
+  List _dicas = [];
+
+  getDica() {
+    int numDica = (Random().nextInt(_dicas.length) + 0);
+    var dica = _dicas[numDica];
+    _dicas.remove(dica);
+
+    return dica;
+  }
+
+  readFile(pathWord) async {
+    var jsonFile = await rootBundle.loadString(pathWord);
+    Map<String, dynamic> word = json.decode(jsonFile);
+
+    setState(
+      () {
+        _tipo = word['tipo'];
+        _palavra = word['palavra'];
+        _wordArray = _palavra.split("");
+        _dicas = word['dicas'];
+        _dicas.add(word['dicaImagem']);
+      },
+    );
+  }
+
   @override
   initState() {
     super.initState();
     var words = [
       "lib/assets/words/banana.json",
+      "lib/assets/words/aviao.json",
+      "lib/assets/words/boneca.json",
+      "lib/assets/words/cachorro.json",
+      "lib/assets/words/casa.json",
+      "lib/assets/words/galinha.json",
+      "lib/assets/words/gato.json",
+      "lib/assets/words/lapis.json",
+      "lib/assets/words/lua.json",
+      "lib/assets/words/professora.json",
     ];
 
-    print((Random().nextInt(words.length) + 0).toString());
-    //var jsonFile = readFile(words[(Random().nextInt(0) + 0)]);
-  }
-
-  readFile(words) async {
-    var jsonFile = await rootBundle.loadString(words);
-    Map<String, dynamic> word = json.decode(jsonFile);
-
-    print(word['tipo']);
-    print(word['palavra']);
-    print(word['dicas']);
-    print(word['dicaImagem']);
+    var jsonFile = readFile(words[(Random().nextInt(words.length) + 0)]);
   }
 
   @override
@@ -118,7 +144,7 @@ class _GameBananaState extends State<GameBanana> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "FRUTA",
+          _tipo.toUpperCase(),
           style: TextStyle(
             color: Colors.blue[900],
             decoration: TextDecoration.none,
@@ -141,15 +167,23 @@ class _GameBananaState extends State<GameBanana> {
         children: [
           //Background
           Visibility(
+            visible: true,
             child: Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: Colors.lime.shade200,
               ),
-              child: Stack(
-                alignment: Alignment.bottomLeft,
-                children: const [],
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                child: Stack(
+                  alignment: Alignment.bottomLeft,
+                  children: const [
+                    Text(
+                      "Adasdasdas",
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

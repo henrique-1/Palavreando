@@ -1,0 +1,6 @@
+{
+  "tipo": "animal",
+  "palavra": "gato",
+  "dicas": ["Sou um animal de quatro patas que mia.", "Afio as minhas unhas no sofá.", "Adoro lamber a minha patinha.", "Corro atrás do rato."],
+  "dicaImagem": "lib/assets/images/tips/banana.png"
+}
