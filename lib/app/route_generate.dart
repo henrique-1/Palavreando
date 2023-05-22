@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:palavreando/views/aboutUs.dart';
 import 'package:palavreando/views/characterSelection.dart';
 import 'package:palavreando/views/chooseCharacter.dart';
-import 'package:palavreando/views/games/gameBanana.dart';
 import 'package:palavreando/views/games/games.dart';
 import 'package:palavreando/views/games/gameLost.dart';
 import 'package:palavreando/views/games/gameWin.dart';
@@ -21,8 +20,6 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const AboutUs());
       case "/chooseCharacter":
         return MaterialPageRoute(builder: (_) => const ChooseCharacter());
-      case "/gameBanana":
-        return MaterialPageRoute(builder: (_) => const GameBanana());
       case "/game":
         return MaterialPageRoute(
           builder: (_) {
