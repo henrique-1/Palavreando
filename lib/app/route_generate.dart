@@ -4,6 +4,8 @@ import 'package:palavreando/views/characterSelection.dart';
 import 'package:palavreando/views/chooseCharacter.dart';
 import 'package:palavreando/views/games/gameBanana.dart';
 import 'package:palavreando/views/games/games.dart';
+import 'package:palavreando/views/games/gameLost.dart';
+import 'package:palavreando/views/games/gameWin.dart';
 import 'package:palavreando/views/home.dart';
 
 class RouteGenerator {
@@ -22,7 +24,40 @@ class RouteGenerator {
       case "/gameBanana":
         return MaterialPageRoute(builder: (_) => const GameBanana());
       case "/game":
-        return MaterialPageRoute(builder: (_) => const Game());
+        return MaterialPageRoute(
+          builder: (_) {
+            var args = settings.arguments as List;
+            return Game(
+              characterFullBody: args[0].toString(),
+              character: args[1].toString(),
+              characterSad: args[2].toString(),
+            );
+          },
+        );
+      case "/gameLost":
+        return MaterialPageRoute(
+          builder: (_) {
+            var args = settings.arguments as List;
+            return GameOver(
+              tipo: args[0].toString(),
+              palavra: args[1].toString(),
+              characterFullBody: args[2].toString(),
+              character: args[3].toString(),
+              characterSad: args[4].toString(),
+            );
+          },
+        );
+      case "/gameWin":
+        return MaterialPageRoute(
+          builder: (_) {
+            var args = settings.arguments as List;
+            return GameWin(
+              characterFullBody: args[0].toString(),
+              character: args[1].toString(),
+              characterSad: args[2].toString(),
+            );
+          },
+        );
       default:
         return _erroRota();
     }

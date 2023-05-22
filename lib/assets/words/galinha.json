@@ -2,5 +2,5 @@
   "tipo": "animal",
   "palavra": "galinha",
   "dicas": ["Sou a mulher do galo.", "Tenho bico, penas e boto ovo.", "Meus filhotes são os pintinhos."],
-  "dicaImagem": "lib/assets/images/tips/banana.png"
+  "dicaImagem": "lib/assets/images/tips/galinha.png"
 }

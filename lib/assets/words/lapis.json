@@ -2,5 +2,5 @@
   "tipo": "objeto",
   "palavra": "lápis",
   "dicas": ["Sou usado para escrever ou colorir.", "Sou usado para desenhar.", "Só a borracha apaga as minhas marcas."],
-  "dicaImagem": "lib/assets/images/tips/banana.png"
+  "dicaImagem": "lib/assets/images/tips/lapis.png"
 }

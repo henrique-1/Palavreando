@@ -176,9 +176,9 @@ class _GameBananaState extends State<GameBanana> {
               ),
               child: Container(
                 padding: const EdgeInsets.all(8),
-                child: Stack(
+                child: const Stack(
                   alignment: Alignment.bottomLeft,
-                  children: const [
+                  children: [
                     Text(
                       "Adasdasdas",
                     ),

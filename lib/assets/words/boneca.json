@@ -2,5 +2,5 @@
   "tipo": "brinquedo",
   "palavra": "boneca",
   "dicas": ["Sou um brinquedo.", "Pareço um bebê.", "Posso ser vestida e cuidada como uma filhinha."],
-  "dicaImagem": "lib/assets/images/tips/banana.png"
+  "dicaImagem": "lib/assets/images/tips/boneca.png"
 }

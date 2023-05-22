@@ -15,21 +15,12 @@ dependencies:
     sdk: flutter
   google_fonts: ^4.0.3
   fluttertoast: ^8.2.1
-  path_provider: ^2.0.11
-  rxdart: ^0.27.7
+  flutter_screenutil: ^5.8.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1
-  flutter_launcher_icons: "^0.13.1"
-
-flutter_launcher_icons:
-  android: true
-  ios: true
-  image_path: "lib/assets/icons/palavreando_logo.png"
-  min_sdk_android: 16 # android min sdk min:16, default 21
-  remove_alpha_ios: true
 
 flutter:
   uses-material-design: true
@@ -52,7 +43,16 @@ flutter:
     - lib/assets/images/characterSelect/boy/Menino3.png
     - lib/assets/images/characterSelect/boy/Menino4.png
     # Image tips assets
+    - lib/assets/images/tips/aviao.png
     - lib/assets/images/tips/banana.png
+    - lib/assets/images/tips/boneca.png
+    - lib/assets/images/tips/cachorro.png
+    - lib/assets/images/tips/casa.png
+    - lib/assets/images/tips/galinha.png
+    - lib/assets/images/tips/gato.png
+    - lib/assets/images/tips/lapis.png
+    - lib/assets/images/tips/lua.png
+    - lib/assets/images/tips/professora.png
     # Words assets
     - lib/assets/words/aviao.json
     - lib/assets/words/banana.json
@@ -64,3 +64,35 @@ flutter:
     - lib/assets/words/lapis.json
     - lib/assets/words/lua.json
     - lib/assets/words/professora.json
+    # Image Character FullBody
+    # Image Girl
+    - lib/assets/images/character/girl/meninaCabeloLoiroForca.png
+    - lib/assets/images/character/girl/meninaCabeloMarromForca.png
+    - lib/assets/images/character/girl/meninaCabeloPretoForca.png
+    - lib/assets/images/character/girl/meninaCabeloRuivoForca.png
+    # Image Boy
+    - lib/assets/images/character/boy/meninoCabeloLoiroForca.png
+    - lib/assets/images/character/boy/meninoCabeloMarromForca.png
+    - lib/assets/images/character/boy/meninoCabeloPretoForca.png
+    - lib/assets/images/character/boy/meninoCabeloRuivoForca.png
+    # Image Girl Crying
+    - lib/assets/images/character/girl/cry/MeninaCabeloLoiroChorando.png
+    - lib/assets/images/character/girl/cry/MeninaCabeloMarromChorando.png
+    - lib/assets/images/character/girl/cry/MeninaCabeloPretoChorando.png
+    - lib/assets/images/character/girl/cry/MeninaCabeloRuivoChorando.png
+    # Image Boy Crying
+    - lib/assets/images/character/boy/cry/MeninoCabeloLoiroChorando.png
+    - lib/assets/images/character/boy/cry/MeninoCabeloMarromChorando.png
+    - lib/assets/images/character/boy/cry/MeninoCabeloPretoChorando.png
+    - lib/assets/images/character/boy/cry/MeninoCabeloRuivoChorando.png
+    # Images
+    - lib/assets/images/home.png
+    - lib/assets/images/tornera.png
+    - lib/assets/images/telaAcertou.png
+    # Gotas
+    - lib/assets/images/gotas/gotaMenor.png
+    - lib/assets/images/gotas/gota2.png
+    - lib/assets/images/gotas/gota3.png
+    - lib/assets/images/gotas/gota4.png
+    - lib/assets/images/gotas/gota5.png
+    - lib/assets/images/gotas/gota6.png

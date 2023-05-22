@@ -1,6 +1,5 @@
 {
   "tipo": "profissão",
   "palavra": "professora",
-  "dicas": ["Ensino os alunos na escola.", "Às vezes, sou chamada de “tia”.", "Uso giz ou canetão para escrever na lousa."],
-  "dicaImagem": "lib/assets/images/tips/banana.png"
+  "dicas": ["Ensino os alunos na escola.", "Às vezes, sou chamada de “tia”.", "Uso giz ou canetão para escrever na lousa."]
 }
