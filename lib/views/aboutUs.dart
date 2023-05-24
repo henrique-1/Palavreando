@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutUs extends StatelessWidget {
@@ -372,72 +371,6 @@ class AboutUs extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-            Divider(
-              color: Colors.black,
-              thickness: 2.r,
-            ),
-            Text(
-              "Tecnologias Utilizadas",
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontFamily: GoogleFonts.dynaPuff().fontFamily,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            Row(
-              children: [
-                const Spacer(),
-                Column(
-                  children: [
-                    Text(
-                      "Flutter",
-                      style: TextStyle(
-                        fontFamily: GoogleFonts.dynaPuff().fontFamily,
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-                    PhosphorIcon(
-                      PhosphorIcons.regular.airplane,
-                      size: 64.0.r,
-                    )
-                  ],
-                ),
-                const Spacer(),
-                Column(
-                  children: [
-                    Text(
-                      "Phosphor Icons",
-                      style: TextStyle(
-                        fontFamily: GoogleFonts.dynaPuff().fontFamily,
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-                    PhosphorIcon(
-                      PhosphorIcons.regular.phosphorLogo,
-                      size: 64.0.r,
-                    )
-                  ],
-                ),
-                const Spacer(),
-                Column(
-                  children: [
-                    Text(
-                      "Google Fonts",
-                      style: TextStyle(
-                        fontFamily: GoogleFonts.dynaPuff().fontFamily,
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-                    PhosphorIcon(
-                      PhosphorIcons.regular.googleLogo,
-                      size: 64.0.r,
-                    )
-                  ],
-                ),
-                const Spacer()
-              ],
             ),
           ],
         ),
