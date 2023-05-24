@@ -37,7 +37,6 @@ class _GameState extends State<Game> {
   verificaJogo() {
     bool allDropped = false;
     if (_errors >= 5) {
-      print("Perdeu");
       Navigator.pushNamed(
         context,
         "/gameLost",
@@ -52,7 +51,6 @@ class _GameState extends State<Game> {
     } else if ((_errors == 1 && !_isTipShow) ||
         (_errors == 3 && !_isTipShow) ||
         (_errors == 4 && !_isTipShow)) {
-      print("Mostra dica");
       setState(() {
         _dica = getDica();
         _isTipEnabled = true;
@@ -62,10 +60,8 @@ class _GameState extends State<Game> {
       //   allDropped = _isDropped[i] ? true : false;
       // }
       allDropped = _isDropped.contains(false) ? false : true;
-      print(
-          "Todas as letras estão na posição correta? ${allDropped.toString()}");
+
       if (allDropped) {
-        print("Ganhou");
         Navigator.pushNamed(
           context,
           "/gameWin",
@@ -341,16 +337,13 @@ class _GameState extends State<Game> {
                           onAccept: (data) {
                             if (jsonDecode(data)["letter"] ==
                                 _wordArray[index].toUpperCase()) {
-                              print("Letra certa");
                               setState(() {
                                 _isDropped[index] = true;
                                 _draggableReaction[jsonDecode(data)["index"]] =
                                     false;
                               });
-                              print("Agora verifica o Jogo");
                               verificaJogo();
                             } else {
-                              print("Letra errada");
                               addErrors();
                               verificaJogo();
                             }
