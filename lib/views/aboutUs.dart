@@ -361,7 +361,7 @@ class AboutUs extends StatelessWidget {
                   ),
                   SizedBox(height: 5.h),
                   Text(
-                    "Desenhou todas as imagens do projeto",
+                    "Desenhou todas as imagens do projeto\nAjudou a encontrar diversas soluções para os bugs do aplicativo",
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontFamily: GoogleFonts.dynaPuff().fontFamily,
