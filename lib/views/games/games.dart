@@ -336,7 +336,8 @@ class _GameState extends State<Game> {
                         return DragTarget<String>(
                           onAccept: (data) {
                             if (jsonDecode(data)["letter"] ==
-                                _wordArray[index].toUpperCase()) {
+                                    _wordArray[index].toUpperCase() &&
+                                _isDropped[index] == false) {
                               setState(() {
                                 _isDropped[index] = true;
                                 _draggableReaction[jsonDecode(data)["index"]] =
