@@ -71,7 +71,11 @@ class Home extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, "/chooseCharacter");
+                          // Navigator.pushNamed(context, "/chooseCharacter");
+                          Navigator.popAndPushNamed(
+                            context,
+                            "/chooseCharacter",
+                          );
                         },
                         label: Text(
                           "JOGAR",

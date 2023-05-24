@@ -117,7 +117,7 @@ class _GameWinState extends State<GameWin> {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(
+                  Navigator.popAndPushNamed(
                     context,
                     "/game",
                     arguments: [

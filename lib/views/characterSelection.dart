@@ -294,7 +294,7 @@ class _CharacterSelectionState extends State<CharacterSelection> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           if (_index != 0) {
-            Navigator.pushNamed(
+            Navigator.popAndPushNamed(
               context,
               "/game",
               arguments: [_characterSelected, _character, _characterSad],

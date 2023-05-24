@@ -159,7 +159,7 @@ class _GameOverState extends State<GameOver> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(
+                    Navigator.popAndPushNamed(
                       context,
                       "/game",
                       arguments: [

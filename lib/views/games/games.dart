@@ -37,7 +37,7 @@ class _GameState extends State<Game> {
   verificaJogo() {
     bool allDropped = false;
     if (_errors >= 5) {
-      Navigator.pushNamed(
+      Navigator.popAndPushNamed(
         context,
         "/gameLost",
         arguments: [
@@ -62,7 +62,7 @@ class _GameState extends State<Game> {
       allDropped = _isDropped.contains(false) ? false : true;
 
       if (allDropped) {
-        Navigator.pushNamed(
+        Navigator.popAndPushNamed(
           context,
           "/gameWin",
           arguments: [
