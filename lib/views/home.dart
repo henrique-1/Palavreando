@@ -33,8 +33,8 @@ class Home extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
+            height: 1.0.sh,
+            width: 1.0.sw,
             decoration: BoxDecoration(
               //color: Colors.lime.shade200,
               color: Colors.lightBlue[200],
@@ -63,7 +63,9 @@ class Home extends StatelessWidget {
                           textStyle: TextStyle(
                             fontSize: 20.sp,
                           ),
-                          fixedSize: Size(200.w, 70.h),
+                          maximumSize: Size(200.w, 70.h),
+                          //fixedSize: Size(200.w, 70.h),
+                          minimumSize: Size(50.w, 18.h),
                           backgroundColor: Colors.orange[300],
                           shape: RoundedRectangleBorder(
                             borderRadius:

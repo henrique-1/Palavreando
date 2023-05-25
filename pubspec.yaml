@@ -1,7 +1,7 @@
 name: palavreando
 description: Um jogo infantil feito pelos alunos do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo em parceria com os alunos da UNIFAE.
 publish_to: "none"
-version: 0.1.0
+version: 1.0.1
 
 environment:
   sdk: ">=2.19.4 <3.0.0"
@@ -16,6 +16,7 @@ dependencies:
   google_fonts: ^4.0.3
   fluttertoast: ^8.2.1
   flutter_screenutil: ^5.8.1
+  collection: ^1.17.1
 
 dev_dependencies:
   flutter_test:

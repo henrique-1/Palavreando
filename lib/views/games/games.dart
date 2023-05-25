@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:collection/collection.dart';
 
 class Game extends StatefulWidget {
   final String characterFullBody;
@@ -33,6 +34,7 @@ class _GameState extends State<Game> {
   final List<bool> _draggableReaction = [];
   bool _isTipEnabled = false;
   bool _isTipShow = false;
+  Function deepEq = const DeepCollectionEquality().equals;
 
   verificaJogo() {
     bool allDropped = false;
@@ -118,6 +120,12 @@ class _GameState extends State<Game> {
         _dicas.add(word['dicaImagem']);
       },
     );
+
+    if (deepEq(_randomWordArray, _wordArray)) {
+      _randomWordArray.clear();
+      readFile(pathWord);
+    }
+
     startSetDropped();
   }
 
