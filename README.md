@@ -1,5 +1,13 @@
 # Palavreando
 
+### Desenvolvido com
+
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
+
+### Disponível para
+
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) ![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white)
+
 ## Sobre o App
 
 Palavreando é um aplicativo lúdico e divertido em que a criança deve acertar qual é a palavra proposta tendo como dica o número de letras e o tema ligado à palavra.
@@ -55,10 +63,8 @@ A alfabetização é mais do que saber ler e escrever. Ela é a porta de entrada
 - Dr. Vinícius S. Andrade
 - Esp. Marcelo Ciacco de Almeida
 
-## Linguagens, Bibliotecas e Frameworks Utilizadas
+## Demais Bibliotecas Utilizadas
 
-- Dart
-- Flutter
 - Phosphor Icons
 - Google Fonts
 - Flutter Toast
